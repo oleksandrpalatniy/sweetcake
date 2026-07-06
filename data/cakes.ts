@@ -1,48 +1,39 @@
-import { Cake } from "@/types/cake";
+export interface Cake {
+  id: string;
+  slug: string;
+  title: string;
+  description: string;
+  pricePerKg: number;
+  image: string;
+  isPopular: boolean;
+}
 
 export const cakes: Cake[] = [
   {
-    id: 1,
-    name: "Шоколадний Deluxe",
-    slug: "chocolate-deluxe",
-    description: "Шоколадний бісквіт, ганаш, бельгійський шоколад.",
-    price: 850,
-    weight: "1 кг",
-    image: "/images/cakes/chocolate.jpg",
-    category: "Шоколадні",
-    popular: true,
-  },
-  {
-    id: 2,
-    name: "Red Velvet",
+    id: "1",
     slug: "red-velvet",
-    description: "Червоний оксамит із кремом Cheese.",
-    price: 920,
-    weight: "1 кг",
-    image: "/images/cakes/red-velvet.jpg",
-    category: "Класичні",
-    popular: true,
+    title: "Червоний оксамит",
+    description: "Класичний торт із вершковим кремом.",
+    pricePerKg: 850,
+    image: "/cakes/red-velvet.jpg",
+    isPopular: true,
   },
   {
-    id: 3,
-    name: "Манго-Маракуя",
-    slug: "mango",
-    description: "Мусовий торт із манго.",
-    price: 980,
-    weight: "1 кг",
-    image: "/images/cakes/mango.jpg",
-    category: "Мусові",
-    popular: true,
+    id: "2",
+    slug: "napoleon",
+    title: "Наполеон",
+    description: "Домашній листковий торт.",
+    pricePerKg: 780,
+    image: "/cakes/napoleon.jpg",
+    isPopular: true,
   },
   {
-    id: 4,
-    name: "Ягідний",
-    slug: "berry",
-    description: "Полуниця, малина, чорниця.",
-    price: 870,
-    weight: "1 кг",
-    image: "/images/cakes/berry.jpg",
-    category: "Ягідні",
-    popular: true,
-  }
+    id: "3",
+    slug: "snickers",
+    title: "Снікерс",
+    description: "Шоколад, карамель і арахіс.",
+    pricePerKg: 920,
+    image: "/cakes/snickers.jpg",
+    isPopular: true,
+  },
 ];

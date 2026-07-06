@@ -1,18 +1,30 @@
+import { Button } from "@/components/ui/button";
 import { Container } from "@/shared/ui/container";
-import { Heading } from "@/shared/ui/heading";
-import { Section } from "@/shared/ui/section";
 
 export default function Hero() {
   return (
-    <Section>
+    <section className="py-20">
       <Container>
         <div className="max-w-2xl">
-          <Heading
-            title="Торти ручної роботи"
-            description="Натуральні інгредієнти, авторський дизайн та доставка по Україні."
-          />
+          <h2 className="text-5xl font-bold tracking-tight">
+            Торти ручної роботи
+          </h2>
+
+          <p className="mt-6 text-lg text-muted-foreground">
+            Натуральні інгредієнти, авторський дизайн та доставка по Україні.
+          </p>
+
+          <div className="mt-8 flex gap-4">
+            <Button size="lg">
+              Замовити
+            </Button>
+
+            <Button variant="outline" size="lg">
+              Каталог
+            </Button>
+          </div>
         </div>
       </Container>
-    </Section>
+    </section>
   );
 }
