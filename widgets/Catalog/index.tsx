@@ -1,6 +1,6 @@
 import { cakes } from "@/data/cakes";
-import { Container } from "@/shared/ui/container";
 import { CakeGrid } from "@/entities/cake";
+import { Container } from "@/shared/ui/container";
 
 export default function Catalog() {
   const popularCakes = cakes.filter((cake) => cake.isPopular);
@@ -9,7 +9,7 @@ export default function Catalog() {
     <section className="py-20">
       <Container>
         <div className="mb-10">
-          <h2 className="text-4xl font-bold">
+          <h2 className="text-4xl font-bold tracking-tight">
             Популярні торти
           </h2>
 
