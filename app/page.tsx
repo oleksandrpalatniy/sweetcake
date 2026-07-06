@@ -3,6 +3,7 @@ import Hero from "@/widgets/Hero";
 import Categories from "@/widgets/Categories";
 import Catalog from "@/widgets/Catalog";
 import Advantages from "@/widgets/Advantages";
+import Reviews from "@/widgets/Reviews";
 import Footer from "@/widgets/Footer";
 
 export default function HomePage() {
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Categories />
       <Catalog />
       <Advantages />
+      <Reviews />
       <Footer />
     </>
   );
