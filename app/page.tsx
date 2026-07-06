@@ -1,11 +1,13 @@
-import Header from "@/componets/layout/Header";
-import Hero from "@/componets/home/Hero";
+import Header from "@/widgets/Header";
+import Hero from "@/widgets/Hero";
+import Footer from "@/widgets/Footer";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <Header />
       <Hero />
+      <Footer />
     </>
   );
 }
