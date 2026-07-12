@@ -1,0 +1,43 @@
+import { Cake } from "./types";
+
+export const cakes: Cake[] = [
+  {
+    id: 1,
+    slug: "red-velvet",
+    title: "Червоний оксамит",
+    description: "Класичний торт із вершковим кремом.",
+    category: "birthday",
+    pricePerKg: 950,
+    image: "/cakes/red-velvet.jpg",
+    images: ["/cakes/red-velvet.jpg"],
+    rating: 4.9,
+    isPopular: true,
+    available: true,
+  },
+  {
+    id: 2,
+    slug: "napoleon",
+    title: "Наполеон",
+    description: "Домашній листковий торт.",
+    category: "classic",
+    pricePerKg: 780,
+    image: "/cakes/napoleon.jpg",
+    images: ["/cakes/napoleon.jpg"],
+    rating: 4.8,
+    isPopular: true,
+    available: true,
+  },
+  {
+    id: 3,
+    slug: "snickers",
+    title: "Снікерс",
+    description: "Шоколад, карамель і арахіс.",
+    category: "birthday",
+    pricePerKg: 920,
+    image: "/cakes/snickers.jpg",
+    images: ["/cakes/snickers.jpg"],
+    rating: 5,
+    isPopular: true,
+    available: true,
+  },
+];

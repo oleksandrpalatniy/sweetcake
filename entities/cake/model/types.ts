@@ -1,9 +1,22 @@
 export interface Cake {
-    id: string;
-    slug: string;
-    title: string;
-    description: string;
-    pricePerKg: number;
-    image: string;
-    isPopular: boolean;
-  }
+  id: number;
+  slug: string;
+
+  title: string;
+  shortDescription: string;
+  description: string;
+
+  category: string;
+
+  pricePerKg: number;
+
+  image: string;
+  images: string[];
+
+  rating: number;
+
+  isPopular: boolean;
+  available: boolean;
+
+  weights: [2, 3, 5];
+}

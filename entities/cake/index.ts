@@ -1,2 +1,5 @@
 export * from "./model";
-export * from "./ui";
+export { default as CakeCard } from "./ui/CakeCard";
+export { default as CakeGrid } from "./ui/CakeGrid";
+export { default as CakeSection } from "./ui/CakeSection";
+import { Cake, cakes } from "@/entities/cake";
