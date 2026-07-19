@@ -1,4 +1,4 @@
-import { cakes } from "@/data/cakes";
+import { cakes } from "@/entities/cake/model";
 import { Container } from "@/shared/ui/container";
 import CakeGrid from "../ui/CakeGrid";
 
