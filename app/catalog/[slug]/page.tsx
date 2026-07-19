@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import Header from "@/widgets/Header";
@@ -7,7 +6,9 @@ import Footer from "@/widgets/Footer";
 import Rating from "@/components/ui/Rating";
 
 import { cakes } from "@/entities/cake/model";
-import { OrderButton } from "@/features/order";
+
+import CakeGallery from "@/entities/cake/ui/CakeGallery";
+import WeightSelector from "@/features/cart/ui/WeightSelector";
 
 interface Props {
   params: Promise<{
@@ -30,15 +31,10 @@ export default async function CakePage({ params }: Props) {
 
       <main className="mx-auto max-w-7xl px-4 py-12">
         <div className="grid gap-12 lg:grid-cols-2">
-          <div className="relative aspect-square overflow-hidden rounded-3xl border bg-white shadow-sm">
-            <Image
-              src={cake.image}
-              alt={cake.title}
-              fill
-              priority
-              className="object-cover"
-            />
-          </div>
+          <CakeGallery
+            images={cake.images}
+            title={cake.title}
+          />
 
           <div className="flex flex-col justify-center">
             <nav className="mb-6 text-sm text-muted-foreground">
@@ -57,15 +53,41 @@ export default async function CakePage({ params }: Props) {
               {cake.description}
             </p>
 
-            <div className="mt-10">
-              <p className="text-sm uppercase tracking-wide text-muted-foreground">
-                Ціна
-              </p>
+            <div className="mt-8">
+              <h2 className="text-xl font-semibold">
+                Начинки
+              </h2>
 
-              <p className="mt-2 text-4xl font-bold text-pink-600">
-                від {cake.pricePerKg} грн/кг
+              <ul className="mt-3 list-disc pl-5 text-muted-foreground">
+                {cake.fillings.map((filling) => (
+                  <li key={filling}>{filling}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-8">
+              <h2 className="text-xl font-semibold">
+                Склад
+              </h2>
+
+              <ul className="mt-3 list-disc pl-5 text-muted-foreground">
+                {cake.ingredients.map((ingredient) => (
+                  <li key={ingredient}>{ingredient}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-8 rounded-xl bg-gray-50 p-4">
+              <h2 className="font-semibold">
+                Зберігання
+              </h2>
+
+              <p className="mt-2 text-muted-foreground">
+                {cake.storage}
               </p>
             </div>
+
+            <WeightSelector cake={cake} />
 
             <div className="mt-6 flex items-center gap-3">
               <div
@@ -79,10 +101,6 @@ export default async function CakePage({ params }: Props) {
                   ? "Доступний до замовлення"
                   : "Тимчасово недоступний"}
               </span>
-            </div>
-
-            <div className="mt-10">
-              <OrderButton cake={cake} />
             </div>
           </div>
         </div>

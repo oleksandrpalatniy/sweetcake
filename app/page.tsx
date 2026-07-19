@@ -6,15 +6,16 @@ import Advantages from "@/widgets/Advantages";
 import Reviews from "@/widgets/Reviews";
 import CTA from "@/widgets/CTA";
 import Footer from "@/widgets/Footer";
+import HowToOrder from "@/widgets/HowToOrder";
 
 export default function HomePage() {
   return (
     <>
       <Header />
       <Hero />
-      <Categories />
+       <Categories />
       <Catalog />
-      <Advantages />
+      <HowToOrder />
       <Reviews />
       <CTA />
       <Footer />

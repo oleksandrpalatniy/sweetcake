@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Cake } from "@/types/cakes";
 
 interface CakeCardProps {
@@ -9,37 +8,36 @@ interface CakeCardProps {
 
 export default function CakeCard({ cake }: CakeCardProps) {
   return (
-    <div className="overflow-hidden rounded-2xl border bg-white shadow-sm transition hover:shadow-xl">
-      <div className="relative h-64 w-full bg-amber-100">
+    <Link
+      href={`/catalog/${cake.slug}`}
+      className="group block overflow-hidden rounded-2xl border bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+    >
+      <div className="relative h-64 w-full overflow-hidden bg-amber-100">
         <Image
           src={cake.image}
           alt={cake.name}
           fill
-          className="object-cover"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
 
       <div className="p-5">
-        <h3 className="mb-2 text-xl font-bold">{cake.name}</h3>
+        <h3 className="mb-2 text-xl font-bold transition-colors group-hover:text-amber-700">
+          {cake.name}
+        </h3>
 
-        <p className="mb-4 text-gray-600">
+        <p className="mb-4 line-clamp-2 text-gray-600">
           {cake.description}
         </p>
 
-        <div className="mb-4 flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <span className="text-2xl font-bold text-amber-700">
-            {cake.price} грн/кг
+            {cake.pricePerKg} грн/кг
           </span>
 
           <span>⭐ {cake.rating}</span>
         </div>
-
-        <Link href={`/cakes/${cake.slug}`}>
-          <Button className="w-full">
-            Детальніше
-          </Button>
-        </Link>
       </div>
-    </div>
+    </Link>
   );
 }

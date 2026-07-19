@@ -1,12 +1,18 @@
+export type ProductCategory =
+  | "cakes"
+  | "pastries"
+  | "desserts"
+  | "croissants";
+
 export interface Cake {
   id: number;
   slug: string;
 
   title: string;
-  shortDescription: string;
   description: string;
+  shortDescription?: string;
 
-  category: string;
+  category: ProductCategory;
 
   pricePerKg: number;
 
@@ -18,5 +24,9 @@ export interface Cake {
   isPopular: boolean;
   available: boolean;
 
-  weights: [2, 3, 5];
+  ingredients: string[];
+  fillings: string[];
+  storage: string;
+
+  weights: number[];
 }
